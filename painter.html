@@ -24,10 +24,14 @@
     
 </form>
 
+<br>
+<div class="container">
+    <img src="Magnolia.jpg" id="image" onclick="selectImage()" alt="Magnolia" style="width: 100px;height: 100px;">
+</div>
 <script> 
-good=0;
-let oops=0;
-
+good=0
+let oops=0
+useImage = 1
 function checkPainter(){
     console.log("Check the guess")
     
@@ -38,7 +42,7 @@ function checkPainter(){
     if(password==guess) {
                 alert("You got it right")
                 good = good + 1
-                out.innerHTML = "Correct answer: " + good + " Wrong answer: " + oops;
+                out.innerHTML = "Correct guess: " + good + " Wrong guess: " + oops;
             } 
             else {
 
@@ -48,7 +52,21 @@ function checkPainter(){
                 out.innerHTML = "Correct guess: " + good+ " Wrong guess: " + oops;
             }
 }
-</script>
 
+function selectImage() {
+    switch (useImage) {
+        case 1: useImage = useImage + 1
+            image.src="NERINE.jpg";
+            break;
+        case 2: useImage = useImage + 1
+            image.src = "Curcuma.jpg";
+            break;
+        case 3: useImage = useImage + 1
+            image.src = "Magnolia.jpg";
+            break;
+    }
+}
+
+</script>
 </body>
 </html> 
